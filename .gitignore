@@ -3,3 +3,5 @@
 .vscode/*
 Twitter.pdf
 Twitter-pycharm/
+twitter/migrations/__pycache__/
+*/__pycache__/
