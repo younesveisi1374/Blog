@@ -5,9 +5,9 @@
   {% else %}
     <h1>Hello World!</h1>
   {% endif %}
-  <ul>
+  <div class="list-group">
     {% for message in message_list %}
-      <li>{{ message.text }}</li>
+      <a href="#" class="list-group-item list-group-item-action">{{ message.text }}</a>
     {% endfor %}
-  </ul>
+  </div>
 {% endblock %}
