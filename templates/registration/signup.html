@@ -1,0 +1,16 @@
+{% extends 'basic.html' %}
+
+{% block title %}
+  Sign Up Form
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h2>Sign up</h2>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-success">Sign Up</button>
+    </form>
+  </div>
+{% endblock %}
