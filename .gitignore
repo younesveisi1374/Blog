@@ -5,6 +5,7 @@ Twitter.pdf
 Twitter-pycharm/
 twitter/migrations/__pycache__/
 */__pycache__/
+db.sqlite3
 # Django #
 *.log
 *.pot
