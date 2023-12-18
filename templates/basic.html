@@ -28,13 +28,13 @@
     <!-- Template Main CSS File -->
     <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" />
 
-    <!--        =======================================================
+    <!--             =======================================================
   * Template Name: Moderna
   * Updated: Sep 18 2023 with Bootstrap v5.3.2
   * Template URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
-  ========================================================        -->
+  ========================================================             -->
   </head>
 
   <body>
@@ -42,7 +42,7 @@
     <header id="header" class="fixed-top d-flex align-items-center">
       <div class="container d-flex justify-content-between align-items-center">
         <div class="logo">
-          <h1 class="text-light"><a href="{% url 'home' %}"><span>Moderna</span></a></h1>
+          <h1 class="text-light"><a href="{% url 'home' %}"><span>Twitter</span></a></h1>
           <!-- Uncomment below if you prefer to use an image logo -->
           <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
         </div>
@@ -53,15 +53,31 @@
               <a href="{% url 'home' %}">Home</a>
             </li>
             {% if user.is_authenticated %}
-              <li>
-                <a href="{% url 'logout' %}">Logout</a>
+              <li class="dropdown">
+                <a href="#">{{ user.username }} <span><i class="bi bi-chevron-down"></i></span></a>
+                <ul>
+                  <li>
+                    <a href="{% url 'logout' %}">Logout</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'password_change' %}">Password Change</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'password_reset' %}">Password Reset</a>
+                  </li>
+                </ul>
               </li>
             {% else %}
-              <li>
-                <a href="{% url 'login' %}">Login</a>
-              </li>
-              <li>
-                <a href="{% url 'signup' %}">Signup</a>
+              <li class="dropdown">
+                <a href="#">User<span><i class="bi bi-chevron-down"></i></span></a>
+                <ul>
+                  <li>
+                    <a href="{% url 'login' %}">Login</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'signup' %}">Signup</a>
+                  </li>
+                </ul>
               </li>
             {% endif %}
           </ul>
