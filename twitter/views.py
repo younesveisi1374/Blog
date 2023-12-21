@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from django.views.generic import TemplateView,ListView, CreateView
+from django.views.generic import TemplateView,ListView, CreateView,DetailView
 from .models import Post
 from django.contrib.auth import logout
 from .forms import PostForm
@@ -28,3 +28,8 @@ class NewPostView(CreateView):
     form_class = PostForm
     success_url = reverse_lazy('home')
     # fields = ['title','excerpt','body','author','date','photo']
+
+
+class PostDetailView(DetailView):
+    model = Post
+    template_name = 'twitter/post_single.html'

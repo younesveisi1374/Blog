@@ -27,7 +27,7 @@
                 <img src="{{ post.photo.url }}" alt="" class="img-fluid" />
               </div>
 
-              <h2 class="entry-title"><a href="blog-single.html">{{ post.title }}</a></h2>
+              <h2 class="entry-title"><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
 
               <div class="entry-meta">
                 <ul>
@@ -46,7 +46,7 @@
               <div class="entry-content">
                 <p>{{ post.excerpt }}</p>
                 <div class="read-more">
-                  <a href="blog-single.html">Read More</a>
+                  <a href="{% url 'post_detail' post.pk %}">Read More</a>
                 </div>
               </div>
             </article>
