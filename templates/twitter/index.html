@@ -21,37 +21,41 @@
     <div class="container" data-aos="fade-up">
       <div class="row">
         <div class="col-lg-8 entries">
-          {% for post in post_list %}
-            <article class="entry">
-              <div class="entry-img">
-                <img src="{{ post.photo.url }}" alt="" class="img-fluid" />
-              </div>
-
-              <h2 class="entry-title"><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
-
-              <div class="entry-meta">
-                <ul>
-                  <li class="d-flex align-items-center">
-                    <i class="bi bi-person"></i> <a href="blog-single.html">{{ post.author }}</a>
-                  </li>
-                  <li class="d-flex align-items-center">
-                    <i class="bi bi-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">{{ post.date }}</time></a>
-                  </li>
-                  <li class="d-flex align-items-center">
-                    <i class="bi bi-chat-dots"></i> <a href="blog-single.html">12 Comments</a>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="entry-content">
-                <p>{{ post.excerpt }}</p>
-                <div class="read-more">
-                  <a href="{% url 'post_detail' post.pk %}">Read More</a>
+          {% if post_list %}
+            {% for post in post_list %}
+              <article class="entry">
+                <div class="entry-img">
+                  <img src="{{ post.photo.url }}" alt="" class="img-fluid" />
                 </div>
-              </div>
-            </article>
-            <!-- End blog entry -->
-          {% endfor %}
+
+                <h2 class="entry-title"><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
+
+                <div class="entry-meta">
+                  <ul>
+                    <li class="d-flex align-items-center">
+                      <i class="bi bi-person"></i> <a href="blog-single.html">{{ post.author }}</a>
+                    </li>
+                    <li class="d-flex align-items-center">
+                      <i class="bi bi-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">{{ post.date }}</time></a>
+                    </li>
+                    <li class="d-flex align-items-center">
+                      <i class="bi bi-chat-dots"></i> <a href="blog-single.html">12 Comments</a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="entry-content">
+                  <p>{{ post.excerpt }}</p>
+                  <div class="read-more">
+                    <a href="{% url 'post_detail' post.pk %}">Read More</a>
+                  </div>
+                </div>
+              </article>
+              <!-- End blog entry -->
+            {% endfor %}
+          {% else %}
+          <h2>No Post Is Avalable!!!</h2>
+          {% endif %}
           <div class="blog-pagination">
             <ul class="justify-content-center">
               <li class="active">
@@ -78,31 +82,6 @@
               </form>
             </div>
             <!-- End sidebar search formn -->
-
-            <h3 class="sidebar-title">Categories</h3>
-            <div class="sidebar-item categories">
-              <ul>
-                <li>
-                  <a href="#">General <span>(25)</span></a>
-                </li>
-                <li>
-                  <a href="#">Lifestyle <span>(12)</span></a>
-                </li>
-                <li>
-                  <a href="#">Travel <span>(5)</span></a>
-                </li>
-                <li>
-                  <a href="#">Design <span>(22)</span></a>
-                </li>
-                <li>
-                  <a href="#">Creative <span>(8)</span></a>
-                </li>
-                <li>
-                  <a href="#">Educaion <span>(14)</span></a>
-                </li>
-              </ul>
-            </div>
-            <!-- End sidebar categories -->
 
             <h3 class="sidebar-title">Recent Posts</h3>
             <div class="sidebar-item recent-posts">

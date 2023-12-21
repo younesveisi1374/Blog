@@ -47,28 +47,18 @@
             <div class="entry-content">
               <p>{{ post.body }}</p>
             </div>
-
-            <div class="entry-footer">
-              <i class="bi bi-folder"></i>
-              <ul class="cats">
-                <li>
-                  <a href="#">Business</a>
-                </li>
-              </ul>
-
-              <i class="bi bi-tags"></i>
-              <ul class="tags">
-                <li>
-                  <a href="#">Creative</a>
-                </li>
-                <li>
-                  <a href="#">Tips</a>
-                </li>
-                <li>
-                  <a href="#">Marketing</a>
-                </li>
-              </ul>
-            </div>
+            {% if user.is_authenticated %}
+              <div class="entry-footer">
+                <ul class="cats">
+                  <li>
+                    <a href="{% url 'post_update' post.pk %}"><i class="bi bi-pen-fill"></i> Update</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'post_delete' post.pk %}"><i class="bi bi-file-x"></i> Delete</a>
+                  </li>
+                </ul>
+              </div>
+            {% endif %}
           </article>
           <!-- End blog entry -->
 
