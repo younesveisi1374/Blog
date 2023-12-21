@@ -47,7 +47,7 @@
             <div class="entry-content">
               <p>{{ post.body }}</p>
             </div>
-            {% if user.is_authenticated %}
+            {% if user.username == post.author.username %}
               <div class="entry-footer">
                 <ul class="cats">
                   <li>
