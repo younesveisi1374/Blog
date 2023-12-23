@@ -6,6 +6,7 @@ from django.contrib.auth import logout
 from .forms import PostForm
 from django.urls import reverse_lazy
 from django.views.generic.edit import UpdateView, DeleteView
+from django.core.paginator import Paginator
 
 
 def logout_view(request):
@@ -17,10 +18,23 @@ def logout_view(request):
 
 
 class HomeView(ListView):
-    model = Post
+    # model = Post
     template_name = 'twitter/index.html'
     # def get(self, request):
     #    return render(request, 'twitter/index.html', {'name': 'Younes'})
+    paginate_by = 1
+
+    def get(self, request):
+        posts = Post.objects.all()
+        paginator = Paginator(posts, self.paginate_by)
+
+        page_number = request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+
+        context = {
+            'post_list': page_obj
+        }
+        return render(request, self.template_name, context)
 
 
 class NewPostView(CreateView):
