@@ -7,6 +7,7 @@ from .forms import PostForm
 from django.urls import reverse_lazy
 from django.views.generic.edit import UpdateView, DeleteView
 from django.core.paginator import Paginator
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 def logout_view(request):
@@ -43,6 +44,10 @@ class NewPostView(CreateView):
     form_class = PostForm
     success_url = reverse_lazy('home')
     # fields = ['title','excerpt','body','author','date','photo']
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
 
 
 class PostDetailView(DetailView):
