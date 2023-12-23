@@ -38,7 +38,7 @@ class HomeView(ListView):
         return render(request, self.template_name, context)
 
 
-class NewPostView(CreateView):
+class NewPostView(LoginRequiredMixin, CreateView):
     model = Post
     template_name = 'twitter/post_new.html'
     form_class = PostForm
