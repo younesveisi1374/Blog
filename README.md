@@ -1,8 +1,8 @@
-# Twitter Clone
+# Blog Clone
 
 **Author: [Younes Veisi]**
 
-This is a Twitter clone project built using Django, aiming to replicate some of the core functionalities of the popular social media platform.
+This is a Blog clone project built using Django, aiming to replicate some of the core functionalities of the popular social media platform.
 
 ---
 
@@ -20,8 +20,8 @@ This is a Twitter clone project built using Django, aiming to replicate some of 
 
 To run this project locally, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/younesveisi1374/Twitter.git`
-2. Navigate to the project directory: `cd Twitter`
+1. Clone the repository: `git clone https://github.com/younesveisi1374/Blog.git`
+2. Navigate to the project directory: `cd Blog`
 3. Create a virtual environment (optional but recommended): `python -m venv .venv`
 4. Activate the virtual environment:
    - On Windows: `.venv\Scripts\activate`
@@ -37,7 +37,7 @@ To run this project locally, follow these steps:
 
 ## Usage
 
-Once the development server is running, access the application at `http://localhost:8000` in your web browser. You can then register a new account, log in, and start using the Twitter clone by creating tweets, following other users, liking, retweeting, and exploring the functionalities.
+Once the development server is running, access the application at `http://localhost:8000` in your web browser. You can then register a new account, log in, and start using the Blog clone by creating tweets, following other users, liking, retweeting, and exploring the functionalities.
 
 To create API documentation for your Django project, you'll want to outline the endpoints and their functionalities. Based on the provided `urls.py` files, here's an example API documentation:
 
@@ -47,7 +47,7 @@ To create API documentation for your Django project, you'll want to outline the 
 
 ### Home View
 - **URL**: `/`
-- **Description**: Renders the home page of the Twitter clone.
+- **Description**: Renders the home page of the Blog clone.
 - **Method**: GET
 
 ### New Post View
@@ -79,7 +79,7 @@ To create API documentation for your Django project, you'll want to outline the 
 
 ## Views Summary
 
-### Twitter App Views
+### Blog App Views
 
 #### HomeView
 - Renders the home page displaying a paginated list of posts.
@@ -146,6 +146,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Acknowledgements
 
 - The project was created as a learning exercise by [younesveisi1374](https://github.com/younesveisi1374).
-- Inspired by the functionalities of Twitter.
+- Inspired by the functionalities of Blog.
 
 ---
